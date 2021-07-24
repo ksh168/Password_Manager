@@ -33,15 +33,15 @@ const db = mysql.createConnection({
 //to make the request
 app.post('/addpassword', (req, res) => {
     //access values from frontend
-    const {password, title} = req.body
+    const {email, password, title} = req.body
 
     //encrypt password here before putting in database
     const hashedPassword = encrypt(password);
 
 
     //insert to db
-    db.query("INSERT INTO passwords (password, title, iv) VALUES (?, ?, ?)", 
-    [hashedPassword.password, title, hashedPassword.iv], 
+    db.query("INSERT INTO passwords (email, password, title, iv) VALUES (?, ?, ?, ?)", 
+    [email, hashedPassword.password, title, hashedPassword.iv], 
     (err, result) => {
         if (err) {
             console.log(err);
