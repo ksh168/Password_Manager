@@ -34,22 +34,14 @@ function App() {
 		}).then((response)=> {
 			//console.log(response.data);
 			setPasswordList(passwordList.map((val) => {
-				return val.id == encryption.id 
-					? {
+				return val.id === encryption.id 
+					? {		//if true, return this (will happen only for one unique)
 						id: val.id, 
 						password: val.password, 
 						title: response.data, 
 						iv: val.iv
 					  }
-					: val;
-				// if (val.id == encryption.id) //will happen only for one unique
-				// {
-				// 	return (id: val.id, password: val.password, title: response.data, iv: val.iv);
-				// }
-				// else 
-				// {
-				// 	return val;
-				// }
+					: val;//else return this
 				})
 			);
 		});
