@@ -1,3 +1,5 @@
+//this file handles encryption and decryption
+
 const crypto = require("crypto");
 
 //need to have some encryption key
