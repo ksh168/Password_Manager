@@ -1,10 +1,25 @@
 # Password_Manager
 
+This is a simple Password Manager.
+Made using React, MySQL, NodeJS.
+
+## User Interface
+
+* **UI walk-through**
+<img src="ui_walkthrough.gif">
+
+Users can add their username/email, password and website name for which they want to save password.
+
+Later when they click on the website name, it reveals their passwords.
+
+Passwords are encrypted using **AES-256-CTR** algorithm and stored in MySQL databse.
+
+\
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the each project directory (client and server), run:
 
 ### `yarn start`
 
