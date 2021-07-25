@@ -1,6 +1,6 @@
 # Password_Manager
 
-This is a simple Password Manager.
+This is a simple browser based Password Manager.
 Made using React, MySQL, NodeJS.
 
 ## User Interface
