@@ -52,6 +52,24 @@ app.post('/addpassword', (req, res) => {
     });
 });
 
+app.get("/showpasswords", (req, res) => {
+    //returning all passwords stored
+    db.query("SELECT * FROM passwords;", (err, result) => {
+        if (err) {
+            console.log(err);
+        } 
+        else{
+            res.send(result);
+        }
+    });
+});
+
+
+app.post("/decryptpassword", (req, res)=> {
+    res.send(decrypt(req.body));
+});
+
+
 app.listen(PORT, () => {
     console.log("Server is up and running!");
   });
